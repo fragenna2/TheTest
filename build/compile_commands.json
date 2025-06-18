@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/assets.cpp.o -c /home/francesco/Desktop/TheTest/src/assets.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/assets.cpp"
+},
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/entity/entity.cpp.o -c /home/francesco/Desktop/TheTest/src/entity/entity.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/entity/entity.cpp"
+},
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/entity/player.cpp.o -c /home/francesco/Desktop/TheTest/src/entity/player.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/entity/player.cpp"
+},
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/main.cpp.o -c /home/francesco/Desktop/TheTest/src/main.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/main.cpp"
+},
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/platform/platform.cpp.o -c /home/francesco/Desktop/TheTest/src/platform/platform.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/platform/platform.cpp"
+}
+]

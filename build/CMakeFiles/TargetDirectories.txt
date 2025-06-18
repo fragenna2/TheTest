@@ -1,0 +1,3 @@
+/home/francesco/Desktop/TheTest/build/CMakeFiles/TheTest.dir
+/home/francesco/Desktop/TheTest/build/CMakeFiles/edit_cache.dir
+/home/francesco/Desktop/TheTest/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/TheTest.dir/src/assets.cpp.o CMakeFiles/TheTest.dir/src/entity/entity.cpp.o CMakeFiles/TheTest.dir/src/entity/player.cpp.o CMakeFiles/TheTest.dir/src/main.cpp.o CMakeFiles/TheTest.dir/src/platform/platform.cpp.o -o TheTest  -lSDL2 -lSDL2_image -lSDL2 -lSDL2_image 
