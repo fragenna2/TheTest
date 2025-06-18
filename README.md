@@ -1,5 +1,5 @@
 ## TheTest
-First game made with SDL2. It was developed on Linux, but it should compile on windows too, because it uses Cmake
+First game made with SDL2. It was developed on Linux it uses Cmake
 
 ## Documentation
 
