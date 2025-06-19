@@ -2,13 +2,16 @@ CMakeFiles/TheTest.dir/src/entity/player.cpp.o: \
  /home/francesco/Desktop/TheTest/src/entity/player.cpp \
  /usr/include/stdc-predef.h \
  /home/francesco/Desktop/TheTest/include/player.h \
- /home/francesco/Desktop/TheTest/include/entity.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
- /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/features.h /usr/include/features-time64.h \
+ /home/francesco/Desktop/TheTest/include/entity.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_main.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include-config-debug/SDL2/SDL_config.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/close_code.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -109,12 +112,17 @@ CMakeFiles/TheTest.dir/src/entity/player.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
- /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/SDL_audio.h \
- /usr/include/SDL2/SDL_error.h /usr/include/SDL2/SDL_endian.h \
- /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
- /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_clipboard.h \
- /usr/include/SDL2/SDL_cpuinfo.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_assert.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_audio.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_error.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_thread.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_clipboard.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h \
@@ -199,22 +207,41 @@ CMakeFiles/TheTest.dir/src/entity/player.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/amxbf16intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/keylockerintrin.h \
- /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_video.h \
- /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_rect.h \
- /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
- /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_keycode.h \
- /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_mouse.h \
- /usr/include/SDL2/SDL_joystick.h /usr/include/SDL2/SDL_gamecontroller.h \
- /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
- /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
- /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
- /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
- /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
- /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
- /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
- /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_events.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_video.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_surface.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_mouse.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_joystick.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_guid.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_sensor.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_quit.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_gesture.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_touch.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_filesystem.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_haptic.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_hidapi.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_hints.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_loadso.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_log.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_messagebox.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_metal.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_power.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_render.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_shape.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_system.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_timer.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_version.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_locale.h \
+ /home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_version.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h \
  /home/francesco/Desktop/TheTest/include/game_math.h \
  /home/francesco/Desktop/TheTest/include/constants.h

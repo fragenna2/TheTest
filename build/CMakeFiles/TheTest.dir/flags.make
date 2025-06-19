@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DRESOURCES_PATH=\"/home/francesco/Desktop/TheTest/resources/\"
 
-CXX_INCLUDES = -I/home/francesco/Desktop/TheTest/include
+CXX_INCLUDES = -I/home/francesco/Desktop/TheTest/include -I/home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include -I/home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include/SDL2 -I/home/francesco/Desktop/TheTest/build/_deps/sdl2-build/include-config-debug/SDL2 -I/home/francesco/Desktop/TheTest/build/_deps/sdl2_image-src/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -fPIE
 

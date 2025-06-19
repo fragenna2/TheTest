@@ -172,6 +172,8 @@ TheTest: CMakeFiles/TheTest.dir/src/main.cpp.o
 TheTest: CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o
 TheTest: CMakeFiles/TheTest.dir/src/platform/platform.cpp.o
 TheTest: CMakeFiles/TheTest.dir/build.make
+TheTest: _deps/sdl2_image-build/libSDL2_image-2.0d.so.0.800.2
+TheTest: _deps/sdl2-build/libSDL2-2.0d.so.0.2800.5
 TheTest: CMakeFiles/TheTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/francesco/Desktop/TheTest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TheTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TheTest.dir/link.txt --verbose=$(VERBOSE)

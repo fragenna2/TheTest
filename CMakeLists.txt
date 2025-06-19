@@ -1,32 +1,54 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.16)
 
-option(PRODUCTION_BUILD "This make a production build" OFF)
+option(PRODUCTION_BUILD "This makes a production build" OFF)
 
 project(TheTest)
 
-find_package(PkgConfig REQUIRED)
+include(FetchContent)
 
-pkg_check_modules(SDL2 REQUIRED sdl2)
-pkg_check_modules(SDL2_IMAGE REQUIRED SDL2_image)
+# SDL2
+set(SDL2_DISABLE_INSTALL ON CACHE BOOL "" FORCE)
+FetchContent_Declare(
+    SDL2
+    GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+    GIT_TAG release-2.28.5
+)
 
+# SDL2_image
+set(SDL2IMAGE_DISABLE_INSTALL ON CACHE BOOL "" FORCE)
+FetchContent_Declare(
+    SDL2_image
+    GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
+    GIT_TAG release-2.8.2
+)
 
-include_directories(${SDL_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR})
+# Fetch
+FetchContent_MakeAvailable(SDL2 SDL2_image)
 
-
+# Sorgenti
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 file(GLOB_RECURSE MY_HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-add_executable(${CMAKE_PROJECT_NAME} "${MY_SOURCES}")
+# Executable
+add_executable(${PROJECT_NAME} ${MY_SOURCES} ${MY_HEADERS})
 
+# Resource path
 if (PRODUCTION_BUILD)
-    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC RESOURCES_PATH="./resources/")
+    target_compile_definitions(${PROJECT_NAME} PUBLIC RESOURCES_PATH="./resources/")
 else()
-    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/")
+    target_compile_definitions(${PROJECT_NAME} PUBLIC RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/")
 endif()
 
+# Includes
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+# Link
+target_link_libraries(${PROJECT_NAME}
+    SDL2::SDL2
+    SDL2_image::SDL2_image
+)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
-
-
+# Windows: link SDL2main
+if (WIN32)
+    target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
+endif()
