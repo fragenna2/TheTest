@@ -1,5 +1,4 @@
 #include "main.h"
-#include "assets.h"
 
 int main(int argc, char* argv[])
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include "lib_selector.h"
 #include "platform.h"
 #include "main.h"
 #include <iostream>
