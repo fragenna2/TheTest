@@ -18,6 +18,7 @@ set(OLD_GLOB
   "/home/francesco/Desktop/TheTest/src/entity/entity.cpp"
   "/home/francesco/Desktop/TheTest/src/entity/player.cpp"
   "/home/francesco/Desktop/TheTest/src/main.cpp"
+  "/home/francesco/Desktop/TheTest/src/platform/game_math.cpp"
   "/home/francesco/Desktop/TheTest/src/platform/platform.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

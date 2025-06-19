@@ -1,4 +1,5 @@
 #pragma once
+#include "math.h"
 
 struct Vector2f
 {
@@ -8,7 +9,8 @@ struct Vector2f
     Vector2f(float p_x, float p_y) : m_X(p_x), m_Y(p_y)
     {}
 
-    //TODO print function
+    float length() const;
+    Vector2f normalize() const;
 
     float m_X, m_Y;
 };

@@ -226,6 +226,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TheTest.dir/build.make CMakeFiles/TheTest.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/platform/game_math.o: src/platform/game_math.cpp.o
+.PHONY : src/platform/game_math.o
+
+# target to build an object file
+src/platform/game_math.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TheTest.dir/build.make CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o
+.PHONY : src/platform/game_math.cpp.o
+
+src/platform/game_math.i: src/platform/game_math.cpp.i
+.PHONY : src/platform/game_math.i
+
+# target to preprocess a source file
+src/platform/game_math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TheTest.dir/build.make CMakeFiles/TheTest.dir/src/platform/game_math.cpp.i
+.PHONY : src/platform/game_math.cpp.i
+
+src/platform/game_math.s: src/platform/game_math.cpp.s
+.PHONY : src/platform/game_math.s
+
+# target to generate assembly for a file
+src/platform/game_math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TheTest.dir/build.make CMakeFiles/TheTest.dir/src/platform/game_math.cpp.s
+.PHONY : src/platform/game_math.cpp.s
+
 src/platform/platform.o: src/platform/platform.cpp.o
 .PHONY : src/platform/platform.o
 
@@ -271,6 +295,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/platform/game_math.o"
+	@echo "... src/platform/game_math.i"
+	@echo "... src/platform/game_math.s"
 	@echo "... src/platform/platform.o"
 	@echo "... src/platform/platform.i"
 	@echo "... src/platform/platform.s"

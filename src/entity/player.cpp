@@ -54,14 +54,22 @@ void Player::handleEvent(const SDL_Event& event)
 
 void Player::update(float deltaTime)
 {
-    float speed = PLAYER_SPEED;
+    Vector2f direction(0.0f, 0.0f);
 
     if(moveUp)
-        getPos().m_Y -= speed * deltaTime;
+        getPos().m_Y -= 1.0f;
     if(moveDown)
-        getPos().m_Y += speed * deltaTime;
+        getPos().m_Y += 1.0f;
     if(moveLeft)
-        getPos().m_X -= speed * deltaTime;
+        getPos().m_X -= 1.0f;
     if(moveRight)
-        getPos().m_X += speed * deltaTime;
+        getPos().m_X += 1.0f;
+
+    if (direction.m_X != 0.0f || direction.m_Y != 0.0f)
+    {
+        Vector2f normDir = direction.normalize();
+
+        getPos().m_X = normDir.m_X * PLAYER_SPEED * deltaTime;
+        getPos().m_Y = normDir.m_Y * PLAYER_SPEED * deltaTime;
+    }
 }

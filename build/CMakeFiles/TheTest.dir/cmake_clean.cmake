@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TheTest.dir/src/entity/player.cpp.o.d"
   "CMakeFiles/TheTest.dir/src/main.cpp.o"
   "CMakeFiles/TheTest.dir/src/main.cpp.o.d"
+  "CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o"
+  "CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o.d"
   "CMakeFiles/TheTest.dir/src/platform/platform.cpp.o"
   "CMakeFiles/TheTest.dir/src/platform/platform.cpp.o.d"
   "TheTest"

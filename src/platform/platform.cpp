@@ -12,7 +12,6 @@ float delta_time;
 int mouse_x;
 int mouse_y;
 
-
 bool isRunning = true;
 
 Platform::Platform(const char* gameName, int width, int height)
@@ -58,7 +57,7 @@ void Platform::initAndRun()
         }
 
         //Render the player
-        p.updataRotation();
+        p.updateRotation();
         p.render();
         p.update(delta_time);
 

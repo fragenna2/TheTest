@@ -14,7 +14,7 @@ public:
     SDL_Texture* getTexture();
     SDL_Rect getCurrentFrame();
 
-    void updataRotation();
+    void updateRotation();
     void render();
 
 private:

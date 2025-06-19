@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/francesco/Desktop/TheTest/src/entity/entity.cpp" "CMakeFiles/TheTest.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/TheTest.dir/src/entity/entity.cpp.o.d"
   "/home/francesco/Desktop/TheTest/src/entity/player.cpp" "CMakeFiles/TheTest.dir/src/entity/player.cpp.o" "gcc" "CMakeFiles/TheTest.dir/src/entity/player.cpp.o.d"
   "/home/francesco/Desktop/TheTest/src/main.cpp" "CMakeFiles/TheTest.dir/src/main.cpp.o" "gcc" "CMakeFiles/TheTest.dir/src/main.cpp.o.d"
+  "/home/francesco/Desktop/TheTest/src/platform/game_math.cpp" "CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o" "gcc" "CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o.d"
   "/home/francesco/Desktop/TheTest/src/platform/platform.cpp" "CMakeFiles/TheTest.dir/src/platform/platform.cpp.o" "gcc" "CMakeFiles/TheTest.dir/src/platform/platform.cpp.o.d"
   )
 

@@ -35,7 +35,7 @@ void Entity::render()
     SDL_RenderCopyEx(m_Renderer, m_Texture, &m_CurrentFrame, &dest_rect, m_Angle, NULL, SDL_FLIP_NONE);
 }
 
-void Entity::updataRotation()
+void Entity::updateRotation()
 {
     int mouse_x, mouse_y;
     SDL_GetMouseState(&mouse_x, &mouse_y);

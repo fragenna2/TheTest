@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/francesco/Desktop/TheTest/build",
+  "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/platform/game_math.cpp.o -c /home/francesco/Desktop/TheTest/src/platform/game_math.cpp",
+  "file": "/home/francesco/Desktop/TheTest/src/platform/game_math.cpp"
+},
+{
+  "directory": "/home/francesco/Desktop/TheTest/build",
   "command": "/usr/bin/c++ -DRESOURCES_PATH=\\\"/home/francesco/Desktop/TheTest/resources/\\\" -I/home/francesco/Desktop/TheTest/include -g -o CMakeFiles/TheTest.dir/src/platform/platform.cpp.o -c /home/francesco/Desktop/TheTest/src/platform/platform.cpp",
   "file": "/home/francesco/Desktop/TheTest/src/platform/platform.cpp"
 }
