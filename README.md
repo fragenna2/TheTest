@@ -10,6 +10,9 @@ cmake -S . -B build
 ```
 To specify which is the build folder. Before compiling check if in the CMakeLists.txt the option "PRODUCTION_BUILD" is turned ON. Then compile the game with:
 ```Bash
+cmake -DCMAKE_BUILD_TYPE=Release -B build
+```
+```Bash
 cmake -build build
 ```
 
