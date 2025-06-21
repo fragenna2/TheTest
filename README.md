@@ -6,6 +6,10 @@ First game made with SDL2. It was developed on Linux it uses Cmake
 To compile, first download the project from github. After execute:
 
 ```Bash
+cmake -S . -B build
+```
+To specify which is the build folder. Before compiling check if in the CMakeLists.txt the option "PRODUCTION_BUILD" is turned ON. Then compile the game with:
+```Bash
 cmake -build build
 ```
 
