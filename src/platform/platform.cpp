@@ -25,14 +25,14 @@ void Platform::init()
     {
         SDL_Log("Error while creating the window: %s", SDL_GetError());
     }
-    SDL_assert_release(m_Window != NULL);
+    SDL_assert(m_Window != NULL);
 
     m_Renderer = SDL_CreateRenderer(m_Window, -1, SDL_RENDERER_SOFTWARE);
     if (!m_Renderer)
     {
         SDL_Log("Error while creting the renderer: %s", SDL_GetError());
     }
-    SDL_assert_release(m_Renderer != NULL);
+    SDL_assert(m_Renderer != NULL);
 
     //This method will load all the assets that the game require
     loadAssets(m_Renderer);
@@ -74,8 +74,6 @@ void Platform::run()
 
         camera.follow(p.getPos(), playerW, playerH);
 
-        render(backGroundTexture, camera);
-        
         //Render and update the enemies
         for (auto& e : enemies)
         {
@@ -124,7 +122,7 @@ void Platform::display()
 
 void Platform::render(SDL_Texture* texture, Camera& camera)
 {
-    SDL_assert_release(texture != NULL);
+    SDL_assert(texture != NULL);
 
     int texW, texH;
     SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);

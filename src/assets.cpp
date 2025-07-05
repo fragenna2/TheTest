@@ -9,6 +9,7 @@ SDL_Texture* loadTexture(SDL_Renderer* renderer, const char* file_path)
 {
     std::cout << "Looking for file: " << file_path << std::endl;
     SDL_Texture* texture = IMG_LoadTexture(renderer , file_path);
+
     if (texture == NULL)
     {
         std::cout << "No file found!" << std::endl;

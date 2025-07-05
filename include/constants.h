@@ -15,3 +15,4 @@ constexpr int SCALE_FACTOR = 4;
 constexpr int PLAYER_SPEED = 200;
 constexpr float GRAVITY_ACCELERATION = 5.f;
 constexpr int ENEMY_SPEED = 150;
+constexpr int TILE_SIZE = 64;

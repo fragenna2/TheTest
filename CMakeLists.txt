@@ -4,16 +4,17 @@ cmake_minimum_required(VERSION 3.16)
 project(TheTest)
 
 # Build option
-option(PRODUCTION_BUILD "Build for production (ON) or development (OFF)" OFF)
+option(PRODUCTION_BUILD "Build for production (ON) or development (OFF)" ON)
 
 # Include FetchContent
 include(FetchContent)
 
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
-else()
-	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
-endif()
+#Set the Runtime library for MSVC compiler
+#if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+#	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
+#else()
+#	set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
+#endif()
 
 # SDL2
 set(SDL2_DISABLE_INSTALL ON CACHE BOOL "" FORCE)
@@ -41,6 +42,10 @@ file(GLOB_RECURSE MY_HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/incl
 # Executable
 add_executable(${PROJECT_NAME} ${MY_SOURCES} ${MY_HEADERS})
 
+set_property(TARGET ${PROJECT_NAME} PROPERTY
+    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+)
+
 # Includes
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
@@ -50,12 +55,18 @@ target_link_libraries(${PROJECT_NAME}
     SDL2_image::SDL2_image
 )
 
-#Release settings
-if (PRODUCTION_BUILD)
-    target_compile_definitions(${PROJECT_NAME} PUBLIC RESOURCES_PATH="resources/")
-else()
-    target_compile_definitions(${PROJECT_NAME} PUBLIC RESOURCES_PATH="${CMAKE_SOURCE_DIR}/resources/")
+if (WIN32)
+    # Imposta il linker subsystem solo per la configurazione Release
+    target_link_options(${PROJECT_NAME} PRIVATE
+        $<$<CONFIG:Release>:/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup>
+    )
 endif()
+
+# Imposta RESOURCES_PATH in base alla build
+target_compile_definitions(${PROJECT_NAME} PUBLIC
+    $<$<CONFIG:Release>:RESOURCES_PATH="resources/">
+    $<$<CONFIG:Debug>:RESOURCES_PATH="${CMAKE_SOURCE_DIR}/resources/">
+)
 
 # On Windows, also link SDL2main
 if (WIN32)
