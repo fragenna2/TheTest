@@ -11,7 +11,7 @@ cmake -S . -B build
 ```
 
 ```Bash
-cmake -build build
+cmake --build build --config Release
 ```
 
 It should compile without errors
