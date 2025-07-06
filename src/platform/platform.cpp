@@ -24,6 +24,7 @@ void Platform::init()
     if (!m_Window)
     {
         SDL_Log("Error while creating the window: %s", SDL_GetError());
+        exit(1);
     }
     SDL_assert(m_Window != NULL);
 
@@ -31,6 +32,7 @@ void Platform::init()
     if (!m_Renderer)
     {
         SDL_Log("Error while creting the renderer: %s", SDL_GetError());
+        exit(1);
     }
     SDL_assert(m_Renderer != NULL);
 
@@ -41,10 +43,7 @@ void Platform::init()
 
 
 void Platform::run()
-{    
-    int winW, winH;
-    SDL_GetWindowSize(m_Window, &winW, &winH);
-
+{
     Camera camera;
     camera.setSize(static_cast<float>(WIDTH / SCALE_FACTOR), static_cast<float>(HEIGHT / SCALE_FACTOR));
 
@@ -122,7 +121,11 @@ void Platform::display()
 
 void Platform::render(SDL_Texture* texture, Camera& camera)
 {
-    SDL_assert(texture != NULL);
+    if (texture == nullptr)
+    {
+        SDL_Log("Error while rendering a texture, the texture is null!");
+        return;
+    }
 
     int texW, texH;
     SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);

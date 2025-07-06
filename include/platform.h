@@ -15,16 +15,6 @@
 
 class Platform
 {
-private:
-    SDL_Window* m_Window = nullptr;         //The pointer to the window object
-    SDL_Renderer* m_Renderer = nullptr;     //The pointer to the renderer object
-
-    const char* m_GameName = "";            //Window name 
-    int m_Width = 0;                        //Size of the window
-    int m_Height = 0;                       //Size of the window
-
-    bool isRunning = true;                  //Variable to check if the game is running
-
 public:
     Platform(const char* gameName, int width, int height);
     ~Platform();
@@ -40,4 +30,15 @@ public:
     SDL_Renderer* getRenderer();
 private:
     void init();                            //This method will setup the window and the renderer
+
+private:
+    SDL_Window* m_Window = nullptr;         //The pointer to the window object
+    SDL_Renderer* m_Renderer = nullptr;     //The pointer to the renderer object
+
+    const char* m_GameName = "";            //Window name 
+    int m_Width = 0;                        //Size of the window
+    int m_Height = 0;                       //Size of the window
+
+    bool isRunning = true;                  //Variable to check if the game is running
+
 };
