@@ -2,15 +2,14 @@
 #include <SDL2/SDL.h>
 #include "lib_selector.h"
 #include "platform.h"
-#include "main.h"
 #include <iostream>
 
 /*
 	Texture of the player, the definition is in the assets.cpp file
 */
-extern SDL_Texture* playerTexture;
-extern SDL_Texture* enemyTexture;
-extern SDL_Texture* backGroundTexture;
+extern SDL_Texture* player_texture;
+extern SDL_Texture* enemy_texture;
+extern SDL_Texture* background_texture;
 
 /*
 	Load a texture based on the name of the file

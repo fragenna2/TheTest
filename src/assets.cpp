@@ -1,9 +1,9 @@
 #include "assets.h"
 #include <iostream>
 
-SDL_Texture* playerTexture;
-SDL_Texture* enemyTexture;
-SDL_Texture* backGroundTexture;
+SDL_Texture* player_texture;
+SDL_Texture* enemy_texture;
+SDL_Texture* background_texture;
 
 SDL_Texture* loadTexture(SDL_Renderer* renderer, const char* file_path)
 {
@@ -21,7 +21,7 @@ SDL_Texture* loadTexture(SDL_Renderer* renderer, const char* file_path)
 
 void loadAssets(SDL_Renderer* renderer)
 {
-    playerTexture = loadTexture(renderer, RESOURCES_PATH "entity.png");
-    enemyTexture = loadTexture(renderer, RESOURCES_PATH "block.png");
-    backGroundTexture = loadTexture(renderer, RESOURCES_PATH "background.png");
+    player_texture = loadTexture(renderer, RESOURCES_PATH "entity.png");
+    enemy_texture = loadTexture(renderer, RESOURCES_PATH "block.png");
+    background_texture = loadTexture(renderer, RESOURCES_PATH "background.png");
 }

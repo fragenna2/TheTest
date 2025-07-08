@@ -10,12 +10,12 @@ class Entity
 public:
     Entity(Vector2f p_pos, SDL_Texture* p_tex, SDL_Renderer* renderer, Camera& camera);
 
-    Vector2f& getPos();
+    Vector2f& get_pos();
 
-    SDL_Texture* getTexture();
-    SDL_Rect getCurrentFrame();
+    SDL_Texture* get_texture();
+    SDL_Rect get_current_frame();
 
-    void updateRotation();
+    void update_rotation();
     void render(Camera& camera);
 
 private:

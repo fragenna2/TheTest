@@ -10,12 +10,12 @@ public:
     ~Player();
 
     void attack();
-    void takeDamage(float hit);
+    void apply_damage(float hit);
 
-    float getHealth() const;
-    int getScore() const;
+    float get_health() const;
+    int get_score() const;
 
-    void handleEvent(const SDL_Event& event);
+    void handle_events(const SDL_Event& event);
     void update(float deltaTime);
 
     //TODO physics
@@ -29,8 +29,8 @@ private:
     float m_Health{ 20.f };
     int m_Score{ 0 };
 
-    bool moveUp = false;
-    bool moveDown = false;
-    bool moveLeft = false;
-    bool moveRight = false;
+    bool move_up = false;
+    bool move_down = false;
+    bool move_left = false;
+    bool move_right = false;
 };

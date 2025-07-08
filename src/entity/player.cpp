@@ -34,20 +34,20 @@ void Player::handleEvent(const SDL_Event& event)
     {
         switch(event.key.keysym.sym)
         {
-            case SDLK_w: moveUp = true; break;
-            case SDLK_s: moveDown = true; break;
-            case SDLK_a: moveLeft = true; break;
-            case SDLK_d: moveRight = true; break;
+            case SDLK_w: move_up = true; break;
+            case SDLK_s: move_down = true; break;
+            case SDLK_a: move_left = true; break;
+            case SDLK_d: move_right = true; break;
         }
     }
     else if(event.type == SDL_KEYUP)
     {
         switch(event.key.keysym.sym)
         {
-            case SDLK_w: moveUp = false; break;
-            case SDLK_s: moveDown = false; break;
-            case SDLK_a: moveLeft = false; break;
-            case SDLK_d: moveRight = false; break;
+            case SDLK_w: move_up = false; break;
+            case SDLK_s: move_down = false; break;
+            case SDLK_a: move_left = false; break;
+            case SDLK_d: move_right = false; break;
         }
     }
 }
@@ -56,21 +56,21 @@ void Player::update(float deltaTime)
 {
     Vector2f direction(0.0f, 0.0f);
 
-    if(moveUp)
+    if(move_up)
         direction.m_Y = -1.0f;
-    if(moveDown)
+    if(move_down)
         direction.m_Y = 1.0f;
-    if(moveLeft)
+    if(move_left)
         direction.m_X = -1.0f;
-    if(moveRight)
+    if(move_right)
         direction.m_X = 1.0f;
 
     if (direction.m_X != 0.0f || direction.m_Y != 0.0f)
     {
-        Vector2f normDir = direction.normalize();
+        Vector2f norm_dir = direction.normalize();
 
-        getPos().m_X += normDir.m_X * PLAYER_SPEED * deltaTime;
-        getPos().m_Y += normDir.m_Y * PLAYER_SPEED * deltaTime;
+        getPos().m_X += norm_dir.m_X * PLAYER_SPEED * deltaTime;
+        getPos().m_Y += norm_dir.m_Y * PLAYER_SPEED * deltaTime;
     }
 
 }

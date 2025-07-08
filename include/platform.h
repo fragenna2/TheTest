@@ -26,8 +26,11 @@ public:
 
     void display();                         //Show the result to the screen
 
-    SDL_Window* getWindow();                //Getters for window and renderer
-    SDL_Renderer* getRenderer();
+    SDL_Window* get_window();                //Getter for window
+    SDL_Renderer* get_renderer();            //Getter for the renderer
+
+    bool is_running();
+
 private:
     void init();                            //This method will setup the window and the renderer
 
@@ -39,6 +42,6 @@ private:
     int m_Width = 0;                        //Size of the window
     int m_Height = 0;                       //Size of the window
 
-    bool isRunning = true;                  //Variable to check if the game is running
+    bool is_running = true;                 //Variable to check if the game is running
 
 };

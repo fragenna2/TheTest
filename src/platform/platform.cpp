@@ -1,11 +1,11 @@
 #include "platform.h"
 
-Uint32 lastTick = 0;
+Uint32 last_tick = 0;
 Uint32 current_tick = 0;
 float delta_time;
 
-int playerW;
-int playerH;
+int player_w;
+int player_h;
 
 Platform::Platform(const char* gameName, int width, int height)
  : m_GameName(gameName), m_Width(width), m_Height(height)
@@ -45,33 +45,33 @@ void Platform::init()
 void Platform::run()
 {
     Camera camera;
-    camera.setSize(static_cast<float>(WIDTH / SCALE_FACTOR), static_cast<float>(HEIGHT / SCALE_FACTOR));
+    camera.set_size(static_cast<float>(WIDTH / SCALE_FACTOR), static_cast<float>(HEIGHT / SCALE_FACTOR));
 
-    Player p(Vector2f(static_cast<float>(WIDTH /2), static_cast<float>(HEIGHT / 2)), playerTexture, m_Renderer, camera);
-    std::vector<Enemy>enemies = {Enemy(Vector2f(10, 10), enemyTexture, m_Renderer, camera)};
+    Player p(Vector2f(static_cast<float>(WIDTH /2), static_cast<float>(HEIGHT / 2)), player_texture, m_Renderer, camera);
+    std::vector<Enemy>enemies = {Enemy(Vector2f(10, 10), enemy_texture, m_Renderer, camera)};
 
-    playerW = p.getCurrentFrame().w;
-    playerH = p.getCurrentFrame().h;
+    player_w = p.get_current_frame().w;
+    player_h = p.get_current_frame().h;
 
-    while (isRunning)
+    while (is_running)
     {
-        lastTick = current_tick;
+        last_tick = current_tick;
         current_tick = SDL_GetTicks();
-        delta_time = (current_tick - lastTick) / 1000.0f;
+        delta_time = (current_tick - last_tick) / 1000.0f;
 
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT)
-                isRunning = false;
+                is_running = false;
 
-            p.handleEvent(event);
+            p.handle_events(event);
         }
 
         SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
         clean();
 
-        camera.follow(p.getPos(), playerW, playerH);
+        camera.follow(p.get_pos(), player_w, player_h);
 
         //Render and update the enemies
         for (auto& e : enemies)
@@ -81,11 +81,11 @@ void Platform::run()
 
         for (auto& e : enemies)
         {
-            e.update(delta_time, p.getPos());
+            e.update(delta_time, p.get_pos());
         }
 
         //Render the player
-        p.updateRotation();
+        p.update_rotation();
         p.render(camera);
         p.update(delta_time);
 
@@ -99,12 +99,12 @@ void Platform::run()
     SDL_Quit();
 }
 
-SDL_Window* Platform::getWindow()
+SDL_Window* Platform::get_window()
 {
     return m_Window;
 }
 
-SDL_Renderer* Platform::getRenderer()
+SDL_Renderer* Platform::get_renderer()
 {
     return m_Renderer;
 }
@@ -127,20 +127,20 @@ void Platform::render(SDL_Texture* texture, Camera& camera)
         return;
     }
 
-    int texW, texH;
-    SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+    int tex_w, tex_h;
+    SDL_QueryTexture(texture, NULL, NULL, &tex_w, &tex_h);
 
-    SDL_Rect srcRect;
-    srcRect.x = static_cast<int>(WIDTH / 2);
-    srcRect.y = static_cast<int>(HEIGHT / 2);
-    srcRect.w = texW;
-    srcRect.h = texH;
+    SDL_Rect src_rect;
+    src_rect.x = static_cast<int>(WIDTH / 2);
+    src_rect.y = static_cast<int>(HEIGHT / 2);
+    src_rect.w = tex_w;
+    src_rect.h = tex_h;
 
     SDL_Rect dstRect;
     dstRect.x = 0;
     dstRect.y = 0;
-    dstRect.w = texW;
-    dstRect.h = texH;
+    dstRect.w = tex_w;
+    dstRect.h = tex_h;
 
-    SDL_RenderCopy(m_Renderer, texture, &srcRect, &dstRect);
+    SDL_RenderCopy(m_Renderer, texture, &src_rect, &dstRect);
 }

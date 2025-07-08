@@ -9,12 +9,12 @@ public:
 	~Camera();
 
 	void follow(const Vector2f& target, int playerW, int playerH);
-	Vector2f worldToScreen(const Vector2f& worldPos) const;
+	Vector2f world_to_screen(const Vector2f& worldPos) const;
 
-	Vector2f getSize() const;
-	void setSize(float x, float y);
+	Vector2f get_size() const;
+	void set_size(float x, float y);
 
-	Vector2f& getPos();
+	Vector2f& get_pos();
 
 private:
 	Vector2f m_Pos = { 0, 0};
