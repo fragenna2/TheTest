@@ -25,7 +25,7 @@ SDL_Rect Entity::get_current_frame()
 
 void Entity::render(Camera& camera) 
 {
-    Vector2f screenPos = m_Pos - camera.getPos();
+    Vector2f screenPos = m_Pos - camera.get_pos();
     SDL_Rect dest_rect = {
         static_cast<int>(screenPos.m_X * SCALE_FACTOR - (m_CurrentFrame.w * SCALE_FACTOR) / 2),
         static_cast<int>(screenPos.m_Y * SCALE_FACTOR - (m_CurrentFrame.h * SCALE_FACTOR) / 2),

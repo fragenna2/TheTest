@@ -11,23 +11,23 @@ void Player::attack()
     return;
 }
 
-void Player::takeDamage(float hit)
+void Player::apply_damage(float hit)
 {
     m_Health -= hit;
     if (m_Health < 0.f) m_Health = 0.f;
 }
 
-float Player::getHealth() const 
+float Player::get_health() const 
 {
     return m_Health;
 }
 
-int Player::getScore() const
+int Player::get_score() const
 {
     return m_Score;
 }
 
-void Player::handleEvent(const SDL_Event& event)
+void Player::handle_events(const SDL_Event& event)
 {
 
     if(event.type == SDL_KEYDOWN)
@@ -69,8 +69,8 @@ void Player::update(float deltaTime)
     {
         Vector2f norm_dir = direction.normalize();
 
-        getPos().m_X += norm_dir.m_X * PLAYER_SPEED * deltaTime;
-        getPos().m_Y += norm_dir.m_Y * PLAYER_SPEED * deltaTime;
+        get_pos().m_X += norm_dir.m_X * PLAYER_SPEED * deltaTime;
+        get_pos().m_Y += norm_dir.m_Y * PLAYER_SPEED * deltaTime;
     }
 
 }

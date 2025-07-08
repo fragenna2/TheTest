@@ -14,4 +14,4 @@ cmake -S . -B build
 cmake --build build --config Release
 ```
 
-It should compile without errors
+It should compile without errors. If you have errors, you can also dowload a build from the release page.
