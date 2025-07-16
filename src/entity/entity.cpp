@@ -38,14 +38,18 @@ void Entity::render(Camera& camera)
 
 void Entity::update_rotation()
 {
+    //Retrive information about the position of the mouse
     int mouse_x, mouse_y;
     SDL_GetMouseState(&mouse_x, &mouse_y);
 
+    //Calculate the center of the image
     float sprite_x = get_pos().m_X / 2;
     float sprite_y = get_pos().m_Y / 2;
 
+    //Retrive the information for the direction vector
     float dx = mouse_x - sprite_x;
     float dy = mouse_y - sprite_y;
 
+    //Calculate the angle using atan2 function
     m_Angle = atan2(dy, dx) * 180.0 / M_PI + 90.f;
 }

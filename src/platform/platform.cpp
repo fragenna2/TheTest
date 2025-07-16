@@ -1,7 +1,9 @@
 #include "platform.h"
 
-Uint32 last_tick = 0;
-Uint32 current_tick = 0;
+Platform* Platform::instance = nullptr;
+
+Uint32 last_tick{ 0 };
+Uint32 current_tick{ 0 };
 float delta_time;
 
 int player_w;
@@ -53,7 +55,7 @@ void Platform::run()
     player_w = p.get_current_frame().w;
     player_h = p.get_current_frame().h;
 
-    while (is_running)
+    while (is_running())
     {
         last_tick = current_tick;
         current_tick = SDL_GetTicks();
@@ -63,7 +65,7 @@ void Platform::run()
         while (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT)
-                is_running = false;
+                m_Running = false;
 
             p.handle_events(event);
         }
@@ -143,4 +145,9 @@ void Platform::render(SDL_Texture* texture, Camera& camera)
     dstRect.h = tex_h;
 
     SDL_RenderCopy(m_Renderer, texture, &src_rect, &dstRect);
+}
+
+bool Platform::is_running()
+{
+    return m_Running;
 }
