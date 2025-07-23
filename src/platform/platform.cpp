@@ -1,16 +1,14 @@
 #include "platform.h"
 
+// set this instance variable to NULL
 Platform* Platform::instance = nullptr;
 
 Uint32 last_tick{ 0 };
 Uint32 current_tick{ 0 };
 float delta_time;
 
-int player_w;
-int player_h;
-
-Platform::Platform(const char* gameName, int width, int height)
- : m_GameName(gameName), m_Width(width), m_Height(height)
+Platform::Platform(const char* game_name, int width, int height)
+ : m_GameName(game_name), m_Width(width), m_Height(height)
 {
     init();
 }
@@ -40,27 +38,27 @@ void Platform::init()
 
     //This method will load all the assets that the game require
     loadAssets(m_Renderer);
-    return;
 }
-
 
 void Platform::run()
 {
+    //Initializing the player and the camera
     Camera camera;
     camera.set_size(static_cast<float>(WIDTH / SCALE_FACTOR), static_cast<float>(HEIGHT / SCALE_FACTOR));
 
-    Player p(Vector2f(static_cast<float>(WIDTH /2), static_cast<float>(HEIGHT / 2)), player_texture, m_Renderer, camera);
-    std::vector<Enemy>enemies = {Enemy(Vector2f(10, 10), enemy_texture, m_Renderer, camera)};
+    Player p(Vector2f(static_cast<float>(WIDTH / 2), static_cast<float>(HEIGHT / 2)), player_texture, Platform::get_instance().get_renderer(), camera);
+    init_character(&p);
 
-    player_w = p.get_current_frame().w;
-    player_h = p.get_current_frame().h;
+    std::vector<Enemy>enemies = { Enemy(Vector2f(10, 10), enemy_texture, Platform::get_instance().get_renderer(), camera) };
 
     while (is_running())
     {
+        //Managing the timing of refresh
         last_tick = current_tick;
         current_tick = SDL_GetTicks();
         delta_time = (current_tick - last_tick) / 1000.0f;
 
+        //Handling events
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
@@ -73,23 +71,8 @@ void Platform::run()
         SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
         clean();
 
-        camera.follow(p.get_pos(), player_w, player_h);
-
-        //Render and update the enemies
-        for (auto& e : enemies)
-        {
-            e.render(camera);
-        }
-
-        for (auto& e : enemies)
-        {
-            e.update(delta_time, p.get_pos());
-        }
-
-        //Render the player
-        p.update_rotation();
-        p.render(camera);
-        p.update(delta_time);
+        //This method containg all the logic of the game
+        game_logic(&p, camera, delta_time, &enemies);
 
         //Update the window
         display();
@@ -121,7 +104,7 @@ void Platform::display()
     SDL_RenderPresent(m_Renderer);
 }
 
-void Platform::render(SDL_Texture* texture, Camera& camera)
+void Platform::render(SDL_Texture* texture)
 {
     if (texture == nullptr)
     {

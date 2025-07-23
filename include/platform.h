@@ -8,11 +8,13 @@
 #include "player.h"
 #include "enemy.h"
 #include "camera.h"
+#include "game.h"
 
 #include <string>
 #include <vector>
 #include <assert.h>
 
+// This class use Singletone pattern in order to access the renderer and the window, that are required in lots of files
 class Platform
 {
 public:
@@ -41,7 +43,7 @@ public:
     void run();                             //Inside this method the game will run
     void clean();                           //Clear the screen before redraw the objects
 
-    void render(SDL_Texture* texture, Camera& camera);  //Render a texture onto the screen, use a camera in order to follow the movements of the image
+    void render(SDL_Texture* texture);      //Render a texture onto the screen
 
     void display();                         //Show the result to the screen
 
@@ -51,7 +53,7 @@ public:
     bool is_running();
 
 private:
-    Platform(const char* gameName, int width, int height);
+    Platform(const char* game_name, int width, int height);
     ~Platform();
 
     void init();                            //This method will setup the window and the renderer
@@ -66,6 +68,5 @@ private:
     int m_Width = 0;                        //Size of the window
     int m_Height = 0;                       //Size of the window
 
-    bool m_Running = true;                 //Variable to check if the game is running
-
+    bool m_Running = true;                  //Variable to check if the game is running
 };
