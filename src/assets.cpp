@@ -7,10 +7,8 @@ SDL_Texture* background_texture;
 
 SDL_Texture* loadTexture(SDL_Renderer* renderer, const char* file_path)
 {
-#ifndef PRODUCTION_BUILD
-    std::cout << "Looking for file: " << file_path << std::endl;
-#endif // !PRODUCTION_BUILD
 
+    std::cout << "Looking for file: " << file_path << std::endl;
     SDL_Texture* texture = IMG_LoadTexture(renderer , file_path);
 
     if (texture == NULL)

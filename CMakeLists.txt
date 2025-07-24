@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 # Project
 project(TheTest)
 
-# Build option
+# Build option NOT REQUIRED
 option(PRODUCTION_BUILD "Build for production (ON) or development (OFF)" ON) #Change PRODUCTION_BUILD to ON if you want to make a release
 
 # Include FetchContent
