@@ -18,12 +18,19 @@ void game_logic(Player* player, Camera& camera, float delta_time, std::vector<En
     for (auto& e : *enemies)
     {
         e.update(delta_time, player->get_pos());
+        
+        if (is_colliding(player->get_pos(), e.get_pos(), player_w))
+        {
+            exit(90);
+        }
+
     }
 
     //Render the player
     player->update_rotation();
     player->render(camera);
     player->update(delta_time);
+
 
 }
 
