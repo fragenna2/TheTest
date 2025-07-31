@@ -49,6 +49,7 @@ void Platform::run()
     Player p(Vector2f(static_cast<float>(WIDTH / 2), static_cast<float>(HEIGHT / 2)), player_texture, Platform::get_instance().get_renderer(), camera);
     init_character(&p);
 
+    // Initializing the enemies list
     std::vector<Enemy>enemies = { Enemy(Vector2f(10, 10), enemy_texture, Platform::get_instance().get_renderer(), camera) };
 
     while (is_running())

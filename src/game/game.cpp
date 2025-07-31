@@ -1,7 +1,5 @@
 #include "game.h"
 
-#include <iostream>
-
 int player_w;
 int player_h;
 
