@@ -14,6 +14,9 @@
 #include <vector>
 #include <assert.h>
 
+// Forward declaration ot the Game class coming from the "game.h"
+class Game;
+
 // This class use Singletone pattern in order to access the renderer and the window, that are required in lots of files
 class Platform
 {
@@ -40,7 +43,7 @@ public:
         instance = nullptr;
     }
 
-    void run();                             //Inside this method the game will run
+    void run(Game& game);                   //Inside this method the game will run
     void clean();                           //Clear the screen before redraw the objects
 
     void render(SDL_Texture* texture);      //Render a texture onto the screen

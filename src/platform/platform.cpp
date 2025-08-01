@@ -38,20 +38,13 @@ void Platform::init()
 
     //This method will load all the assets that the game require
     loadAssets(m_Renderer);
+
+    Game game(m_Renderer);
+    run(game);
 }
 
-void Platform::run()
+void Platform::run(Game& game)
 {
-    //Initializing the player and the camera
-    Camera camera;
-    camera.set_size(static_cast<float>(WIDTH / SCALE_FACTOR), static_cast<float>(HEIGHT / SCALE_FACTOR));
-
-    Player p(Vector2f(static_cast<float>(WIDTH / 2), static_cast<float>(HEIGHT / 2)), player_texture, Platform::get_instance().get_renderer(), camera);
-    init_character(&p);
-
-    // Initializing the enemies list
-    std::vector<Enemy>enemies = { Enemy(Vector2f(10, 10), enemy_texture, Platform::get_instance().get_renderer(), camera) };
-
     while (is_running())
     {
         //Managing the timing of refresh
@@ -66,14 +59,14 @@ void Platform::run()
             if (event.type == SDL_QUIT)
                 m_Running = false;
 
-            p.handle_events(event);
+            game.get_player()->handle_events(event);
         }
 
         SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
         clean();
 
         //This method containg all the logic of the game
-        game_logic(&p, camera, delta_time, &enemies);
+        game.game_logic(delta_time);
 
         //Update the window
         display();
