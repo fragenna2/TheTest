@@ -3,7 +3,7 @@
 /*  
     This header file allow to include automatically
     the SDL_image image depending on the platform you are
-    working with, due to the different ways the library usage is 
+    working with, due to the different ways the library usage
     beetween windows and linux
 */
 

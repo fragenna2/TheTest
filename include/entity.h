@@ -8,23 +8,23 @@
 class Entity
 {
 public:
-    Entity(Vector2f p_pos, SDL_Texture* p_tex, SDL_Renderer* renderer, Camera& camera);
+    Entity(Vector2f p_pos, SDL_Texture* p_tex, SDL_Renderer* renderer, Camera& camera);     // Default constructor
 
-    Vector2f& get_pos();
+    Vector2f& get_pos();                            // Getter for the position
 
-    SDL_Texture* get_texture();
-    SDL_Rect get_current_frame();
+    SDL_Texture* get_texture();                     // Getter for the texture
+    SDL_Rect get_current_frame();                   // Getter for the frame
 
-    void update_rotation();
-    void render(Camera& camera);
+    void update_rotation();                         // Method to update the rotation
+    void render(Camera& camera);                    // Method to render the enemy
 
 private:
-    SDL_Renderer* m_Renderer;
-    Vector2f m_Pos;
-    SDL_Rect m_CurrentFrame;
-    SDL_Texture* m_Texture;
+    SDL_Renderer* m_Renderer;                       // Renderer copy
+    Vector2f m_Pos;                                 // Vector position
+    SDL_Rect m_CurrentFrame;                        // Current frame
+    SDL_Texture* m_Texture;                         // Texture
     
-    Camera& m_Camera;
+    Camera& m_Camera;                               // Camera field
 
-    float m_Angle = 0.f;
+    float m_Angle = 0.f;                            // Rotation of the texture
 };

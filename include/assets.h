@@ -1,7 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include "lib_selector.h"
-#include "platform.h"
 #include <iostream>
 
 /*
@@ -20,3 +19,8 @@ void loadAssets(SDL_Renderer* renderer);
 	The "RESOURCES_PATH" macro is defined in the CMake setup script
 */
 SDL_Texture* loadTexture(SDL_Renderer* renderer,const char* file_path);
+
+/*
+	Free the memory occupied by the assets
+*/
+void free_memory_assets();

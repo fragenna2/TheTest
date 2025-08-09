@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
 
+#include "game.h"
 #include "assets.h"
 #include "entity.h"
 #include "constants.h"
@@ -8,14 +9,10 @@
 #include "player.h"
 #include "enemy.h"
 #include "camera.h"
-#include "game.h"
 
 #include <string>
 #include <vector>
 #include <assert.h>
-
-// Forward declaration ot the Game class coming from the "game.h"
-class Game;
 
 // This class use Singletone pattern in order to access the renderer and the window, that are required in lots of files
 class Platform
@@ -43,7 +40,7 @@ public:
         instance = nullptr;
     }
 
-    void run(Game& game);                   //Inside this method the game will run
+    void run();                             //Inside this method the game will run
     void clean();                           //Clear the screen before redraw the objects
 
     void render(SDL_Texture* texture);      //Render a texture onto the screen
@@ -56,13 +53,15 @@ public:
     bool is_running();
 
 private:
-    Platform(const char* game_name, int width, int height);
+    Platform(const char* game_name, int width, int height);          // Default constructor, require a title, and the size of the window
     ~Platform();
 
     void init();                            //This method will setup the window and the renderer
 
 private:
     static Platform* instance;
+
+    GameManager game;                       // Game class
 
     SDL_Window* m_Window = nullptr;         //The pointer to the window object
     SDL_Renderer* m_Renderer = nullptr;     //The pointer to the renderer object

@@ -3,6 +3,7 @@
 // set this instance variable to NULL
 Platform* Platform::instance = nullptr;
 
+// variable for timings
 Uint32 last_tick{ 0 };
 Uint32 current_tick{ 0 };
 float delta_time;
@@ -18,6 +19,7 @@ Platform::~Platform()
 
 void Platform::init()
 {
+    // Init vide
     SDL_Init(SDL_INIT_VIDEO);
 
     m_Window = SDL_CreateWindow("The test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_MAXIMIZED);
@@ -39,12 +41,14 @@ void Platform::init()
     //This method will load all the assets that the game require
     loadAssets(m_Renderer);
 
-    Game game(m_Renderer);
-    run(game);
+    // Initialize the game and run
+    game.init(m_Renderer);
+    run();
 }
 
-void Platform::run(Game& game)
+void Platform::run()
 {
+    //Game loop
     while (is_running())
     {
         //Managing the timing of refresh
@@ -72,17 +76,22 @@ void Platform::run(Game& game)
         display();
     }
     
+    //Free the memory from the assets
+    free_memory_assets();
+
     //Close the game
     SDL_DestroyRenderer(m_Renderer);
     SDL_DestroyWindow(m_Window);
     SDL_Quit();
 }
 
+// Getter for window
 SDL_Window* Platform::get_window()
 {
     return m_Window;
 }
 
+// Getter for renderer
 SDL_Renderer* Platform::get_renderer()
 {
     return m_Renderer;

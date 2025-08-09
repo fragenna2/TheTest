@@ -1,4 +1,5 @@
 #pragma once
+
 #include "player.h"
 #include "camera.h"
 #include "enemy.h"
@@ -8,24 +9,35 @@
 
 #include <vector>
 
-class Game
+/*
+* GameState class
+*/
+enum class GameState
+{
+	MAIN_MENU,
+	PLAYING,
+	ABOUT
+};
+
+class GameManager
 {
 public:
-	Game(SDL_Renderer* renderer);
-	~Game();
+	GameManager();								// Default constructor
+	~GameManager();								// Default deconstructor
 
-	void game_logic(float delta_time);
+	void game_logic(float delta_time);			// Method that handle the entire game
+	void init(SDL_Renderer* renderer);			// Method to initialize the game
 
-	Player* get_player();
+	Player* get_player();						// Getter for the player object
 
 private:
-	SDL_Renderer* m_Renderer;
-	
-	Player* m_Player;
-	Camera m_Camera;
+	SDL_Renderer* m_Renderer;					// Copy of the renderer
 
-	std::vector<Enemy> enemies;
+	Player* m_Player;							// Player class field
+	Camera m_Camera;							// Camera class field
 
-	int player_w;
+	std::vector<Enemy> enemies;					// List of enemies
+
+	int player_w;								// Data about dimensions of the player textures
 	int player_h;
 };
